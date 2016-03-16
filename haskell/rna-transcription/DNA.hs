@@ -1,7 +1,7 @@
 module DNA (toRNA) where
 
 toRNA :: String -> String
-toRNA dna = map fromDNA dna
+toRNA = map fromDNA
 
 fromDNA :: Char -> Char
 fromDNA 'C' = 'G'
