@@ -9,7 +9,7 @@ areaCode = take 3 . number
 number :: String -> String
 number n
         | size == 11 && (head cleanNumber == '1') = drop 1 cleanNumber
-        | size /= 10 = intercalate "" $ replicate 10 "0"
+        | size /= 10 = replicate 10 '0'
         | otherwise = cleanNumber
          where
             cleanNumber = filter isDigit n
@@ -20,7 +20,7 @@ number n
 prettyPrint :: String -> String
 prettyPrint n =
         let cleanNumber = number n
-            prefix = "(" ++ ( take 3 cleanNumber ) ++ ") "
-            fstNum = (drop 3 $ take 6 cleanNumber)  ++ "-"
+            prefix = "(" ++ take 3 cleanNumber ++ ") "
+            fstNum = drop 3 $ take 6 cleanNumber ++ "-"
             sndNum = drop 6 cleanNumber
         in prefix ++ fstNum ++ sndNum

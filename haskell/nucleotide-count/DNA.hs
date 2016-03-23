@@ -27,7 +27,7 @@ count c dna =
         sum $ map (fromEnum . verify validC ) dna
 
 nucleotideCounts :: String -> Map Char Int
-nucleotideCounts = foldl doUpdate emptyMap
+nucleotideCounts = foldl' doUpdate emptyMap
 
 doUpdate :: Map Char Int -> Char -> Map Char Int
 doUpdate count c = updateWithKey f (isValid c) count

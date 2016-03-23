@@ -11,6 +11,6 @@ responseFor message
 
 isYell :: String -> Bool
 isYell message
-        | filter (isAlpha) message == [] = False
+        | not (any isAlpha message) = False
         | all isUpper $ filter isAlpha message = True
         | otherwise = False
