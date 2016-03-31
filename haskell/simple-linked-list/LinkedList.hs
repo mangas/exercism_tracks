@@ -1,7 +1,5 @@
 module LinkedList( new, isNil, nil, fromList, toList, datum, next, reverseLinkedList ) where
 
-import Debug.Trace
-
 data List a = Node a (List a) | NoNode deriving (Eq, Show)
 
 nil :: List a
@@ -23,6 +21,7 @@ toList (Node x n) = x: toList n
 
 datum :: List a -> a
 datum (Node a _) = a
+datum _ = error "Invalid node"
 
 next :: List a -> List a
 next NoNode = NoNode
