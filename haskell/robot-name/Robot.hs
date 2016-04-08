@@ -1,7 +1,6 @@
 module Robot (robotName, mkRobot, resetName) where
 
 import System.Random
-import Data.Char
 import Data.IORef
 
 robotName :: IORef String -> IO String
@@ -21,9 +20,6 @@ resetName n = do
         else writeIORef n new
 
 genName :: IO String
-genName = do
-    g <- newStdGen
-    return $ chars g ++ map intToDigit (numbers g)
-    where
-        chars g = take 2 $ randomRs ('A','Z') g
-        numbers g = take 3 $ randomRs (1,9) g
+genName = mapM randomRIO [a, a, d, d, d]
+            where a = ('A', 'Z') -- a = Upper case letters
+                  d = ('0', '9') -- d = Digits
