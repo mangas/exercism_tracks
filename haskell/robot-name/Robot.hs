@@ -7,9 +7,7 @@ robotName :: IORef String -> IO String
 robotName = readIORef
 
 mkRobot :: IO (IORef String)
-mkRobot = do
-        name <- genName
-        newIORef name
+mkRobot = newIORef =<< genName
 
 resetName :: IORef String -> IO ()
 resetName n = do
