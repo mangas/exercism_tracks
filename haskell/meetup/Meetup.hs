@@ -2,7 +2,6 @@ module Meetup(Weekday(..), Schedule(..), meetupDay ) where
 
 import Data.Time.Calendar
 import qualified Data.Dates as D
-import Debug.Trace
 
 data Weekday = Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday
     deriving (Show, Enum, Ord, Eq)
