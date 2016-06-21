@@ -13,7 +13,7 @@ class Phrase(sentence: String) {
       }
       .split(s"${separator}+")
       .groupBy( (w: String) => w )
-      .map { case (word, words) => (word, words.length) }
+      .mapValues( _.length )
   }
 
   def isAllowed(x: Char): Boolean =
