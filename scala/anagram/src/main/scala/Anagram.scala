@@ -1,7 +1,7 @@
 /**
   * Created by fa on 6/23/16.
   */
-case class Anagram(s: String) {
+class Anagram(s: String) {
 
   val lower_s = s.toLowerCase
   val occur = occurrences(s)
