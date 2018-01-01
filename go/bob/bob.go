@@ -17,15 +17,16 @@ func Hey(remark string) string {
 	case len(allLetters) == 0:
 		if strings.HasSuffix(remark, "?") {
 			return "Sure."
-		} else {
-			return "Whoa, chill out !"
 		}
+
+		return "Whoa, chill out !"
+
 	case allLetters == strings.ToUpper(allLetters) && len(noNumbers) != 0:
 		if !strings.HasSuffix(remark, "?") {
 			return "Whoa, chill out!"
-		} else {
-			return "Calm down, I know what I'm doing!"
 		}
+
+		return "Calm down, I know what I'm doing!"
 
 	case strings.HasSuffix(noSpaces, "?"):
 		return "Sure."
